@@ -1,0 +1,16 @@
+#**Summary**
+#**Live Session Assignment Week 4**
+##-----------------------------------------------------------------------------------------
+#***Housing Sales Data Analysis - Brooklyn (Borough 3)***
+##Date Due: Thursday, June 2, 2016
+##Contributors: Paola Leon, Ken Avery, Andrew Abbott, Earl Shaw
+##-----------------------------------------------------------------------------------------
+### Sales data taken from the rollingsales_queens.csv was examined for relationship between sales price and gross square feet within family homes. 
+### A series of steps were need to clean the “gross sqft” and “sales price raw variables to make them suable for statistical analysis with R.  
+### Family homes were defined as homes where the Colum, “building class category” contained a character string of “FAMILY’. There were exactly 9,711 rows 
+### which qualified after applying this definition.  Rows with sales price less than $25,000 where eliminated from further analysis because it 
+### was guessed that it was like that no sale actually took place on these homes.  To better characterized the relationship of gross sqft to sales 
+### price both variables were transformed by log functions.  A scatter plot revealed a moderate positive linearly correlation between the two variables.
+### As the log of gross sqft increases from 6.0 to 9.5, the log of sales price also increased on the interval of 10.0 to 15.5 with the largest density 
+### of points clustered between the log sale prices of 12.0 and 14.0. 
+##-----------------------------------------------------------------------------------------
