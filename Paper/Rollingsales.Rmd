@@ -1,0 +1,150 @@
+---
+title: "RollingSales"
+author: "Andrew Abbott, Ken Avery, Paola Leon, Earl Shaw"
+date: "May 30, 2016"
+output:
+        html_document: 
+          keep_md: true
+---
+
+```{r}
+setwd("/Users/Abbott/test-repo/RollingSales")
+```
+
+# Save the file as a csv and use read.csv
+```{r}
+queens <- read.csv("rollingsales_queens.csv",skip=4,header=TRUE)
+```
+
+## Check the data
+```{r}
+head(queens)
+summary(queens)
+str(queens)
+```
+
+# We create a new variable that is a "clean" version of sale.price.
+# sale.price.n is numeric, not a factor.
+```{r}
+library(plyr)
+queens$SALE.PRICE.N <- as.numeric(gsub("[^[:digit:]]","", queens$SALE.PRICE))
+count(is.na(queens$SALE.PRICE.N))
+```
+There are 7,488 without values.
+
+# Make all variable names lower case
+```{r}
+names(queens) <- tolower(names(queens)) 
+names(queens)
+```
+
+## Get rid of leading digits and make sure numeric
+
+```{r}
+queens$gross.sqft <- as.numeric(gsub("[^[:digit:]]","", queens$gross.square.feet))
+queens$land.sqft <- as.numeric(gsub("[^[:digit:]]","", queens$land.square.feet))
+class(queens$gross.sqft)
+class(queens$land.sqft)
+```
+
+## Change sale.date to Date format in R, format must be specified.
+```{r}
+queens$sale.date <- as.Date(queens$sale.date, "%m/%d/%y")
+queens$year.built <- as.numeric(as.character(queens$year.built))
+class(queens$sale.date)
+```
+
+
+## Do a bit of exploration to make sure there's not anything
+## weird going on with sale prices
+```{r}
+attach(queens)
+hist(sale.price.n) 
+```
+
+# Everything looks to be 0
+```{r}
+hist(sale.price.n[sale.price.n>0])
+```
+
+#That didn't help
+```{r}
+hist(sale.price.n[sale.price.n<1000000])
+```
+
+#that looks reasonable
+
+```{r}
+detach(queens)
+```
+
+##Now that the data is in correct formats and types we will write it to a new .csv file.
+```{r}
+write.csv(queens, file = "rollingsales_queens2.csv", )
+```
+
+
+
+## Lets keep only the actual sales and create a new data frame to hold them.
+##First lets load the clean data.
+
+```{r}
+queens2 <- read.csv("rollingsales_queens2.csv",header=TRUE)
+```
+
+##Next lets filter out sales prices of $0.00
+
+```{r}
+queens.sale <-queens2[queens2$sale.price.n!=0,]
+```
+
+## We include only sales with prices greater than $0.
+
+```{r}
+plot(queens.sale$gross.sqft,queens.sale$sale.price.n)
+```
+```{r}
+plot(log(queens.sale$gross.sqft),log(queens.sale$sale.price.n))
+```
+
+##Save this data step in a csv file.
+
+```{r}
+write.csv(queens.sale, file = "rollingsales_queenssale.csv")
+```
+
+## There are still some really large sales prices muddling the data.
+## for now, let's look at 1-, 2-, and 3-family homes only
+## and create a new data frame to hold them.
+
+```{r}
+queens3 <- read.csv("rollingsales_queenssale.csv",header=TRUE)
+```
+
+
+```{r}
+queens.homes <- queens3[which(grepl("FAMILY",queens3$building.class.category)),]
+dim(queens.homes)
+```
+
+```{r}
+hist(queens.homes$sale.price.n)
+```
+```{r}
+plot(log(queens.homes$gross.sqft),log(queens.homes$sale.price.n))
+summary(queens.homes[which(queens.homes$sale.price.n<100000),])
+```
+
+## Now to remove outliers that seem like they weren't actual sales
+```{r}
+queens.homes$outliers <- (log(queens.homes$sale.price.n) <=10) + 0
+queens.homes <- queens.homes[which(queens.homes$outliers==0),]
+plot(log(queens.homes$gross.sqft),log(queens.homes$sale.price.n))
+```
+
+## Finally save the dataframe as new csv files:
+
+```{r}
+write.csv(queens.homes, file = "rollingsales_queenshomes.csv")
+```
+
