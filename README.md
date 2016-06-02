@@ -1,7 +1,7 @@
 ##-----------------------------------------------------------------------------------------
 #**README**
 ##-----------------------------------------------------------------------------------------
-#**TITLE: Live Session Assignment Units 3 and 4. Creating projects in RStudio
+#TITLE: Live Session Assignment Units 3 and 4. Creating projects in RStudio
 ##Project Abstract: Housing Sales Data Analysis - Brooklyn (Borough 3)
 ##Date Due: Thursday, June 2, 2016
 ##Contributors: Paola Leon, Ken Avery, Andrew Abbott, Earl Shaw
@@ -33,7 +33,9 @@ This directory contains the following files:
 NAME: rollingsales_queens.csv 		LOCATION: https://github.com/payolitec/Livesession3Assignment/blob/master/Data/rollingsales_queens.csv
 2) Clean file:
 NAME: rollingsales_queens2.csv		LOCATION: https://github.com/payolitec/Livesession3Assignment/blob/master/Data/rollingsales_queens2.csv
-This file reconciles data issues such as data outliers, missing values, wrong data types and wrong data formats; normalizing data into the proper R classes. 
+This file reconciles data issues such as data outliers, missing values, wrong data types and wrong data formats; normalizing data into the proper R classes.
+3) Rollingsales_loadandclean.md LOCATION: https://github.com/payolitec/Livesession3Assignment/blob/master/Data/Rollingsales_loadandclean.md
+This file contains R markdown code responsible for loading the raw data and cleaning it. For example, handling outliers, changing wrong data types, and normalized data into the proper R classes.
 ###3. An Analysis directory:
 NAME: Analysis				            LOCATION: 
 https://github.com/payolitec/Livesession3Assignment/tree/master/Analysis
@@ -43,23 +45,16 @@ NAME:rollingsales_queenshomes.csv	LOCATION: https://github.com/payolitec/Liveses
 2) Sales data:
 NAME:rollingsales_queenssale.csv	LOCATION: https://github.com/payolitec/Livesession3Assignment/blob/master/Analysis/rollingsales_queenssale.csv
 These files contain the exploratory data analysis performed over clean data to visualize and make comparisons (i) across neighborhoods, and (ii) across time.
+3) Rollingsales_data_analysis.md* LOCATION: https://github.com/payolitec/Livesession3Assignment/blob/master/Analysis/Rollingsales_data_analysis.md
+This file contains R markdown code responsible for loading the clean data and performing exploratory analysis on it, e.g. plots, histograms and summary statistics to determine any patterns and relationships among variables within the data set.
 ###4. A Paper directory:
 NAME: Paper				                LOCATION: 
 https://github.com/payolitec/Livesession3Assignment/tree/master/Paper
 This directory contains the following files:
-1) A Rmarkdown document
-NAME: Rollingsales.Rmd 		        LOCATION: https://github.com/payolitec/Livesession3Assignment/blob/master/Paper/Rollingsales.Rmd
-The first file contains R code which is designed to load the housing sales data into R and to clean it up. This file is a Rmarkdown document labeled: "Rollingsales.rmd". This data clean up process is responsible for examining outliers, addressing missing values, and correcting any variable formats with the appropriate type.
-2) A markdown document
-NAME: Rollingsales.md			        LOCATION: https://github.com/payolitec/Livesession3Assignment/blob/master/Paper/Rollingsales.md
-The second file contains R code responsible for exploratory data analysis on the cleaned data set. This code serves to determine the distribution of key variables and summary statistics across neighborhoods and across time to get a better understanding of any patterns in the data and potential relationships amongst the elements contained within the data. This file is a markdown document labeled: "Rollingsales.md"
-3) A HTML file
-This file is created by knitting the Rmd file. It contains the results.
-NAME: Rollingsales.html		        LOCATION: https://github.com/payolitec/Livesession3Assignment/blob/master/Paper/Rollingsales.html
-4) A txt file
-NAME:summary.txt			            LOCATION: https://github.com/payolitec/Livesession3Assignment/blob/master/Paper/summary.txt
+1) A txt file
+NAME:Explanation.txt			        LOCATION: https://github.com/payolitec/Livesession3Assignment/blob/master/Paper/Explanation.txt
 This file provides a summary of any patterns and/or relationships found within the cleaned data set.
-5) A Microsoft Word file
+2) A Microsoft Word file
 NAME: LiveSessionAssignment Units 3 and 4 - Instructions	LOCATION:  https://github.com/payolitec/Livesession3Assignment/blob/master/Paper/LiveSessionAssignment%20Units%203%20and%204%20-%20Instructions.docx
 This file contains the instructions for the Live Session Assignment Units 3 and 4
 ##-----------------------------------------------------------------------------------------
