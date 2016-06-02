@@ -34,8 +34,6 @@ NAME: rollingsales_queens.csv 		LOCATION: https://github.com/payolitec/Livesessi
 2) Clean file:
 NAME: rollingsales_queens2.csv		LOCATION: https://github.com/payolitec/Livesession3Assignment/blob/master/Data/rollingsales_queens2.csv
 This file reconciles data issues such as data outliers, missing values, wrong data types and wrong data formats; normalizing data into the proper R classes.
-3) Rollingsales_loadandclean.md LOCATION: https://github.com/payolitec/Livesession3Assignment/blob/master/Data/Rollingsales_loadandclean.md
-This file contains R markdown code responsible for loading the raw data and cleaning it. For example, handling outliers, changing wrong data types, and normalized data into the proper R classes.
 ###3. An Analysis directory:
 NAME: Analysis				            LOCATION: 
 https://github.com/payolitec/Livesession3Assignment/tree/master/Analysis
@@ -45,8 +43,6 @@ NAME:rollingsales_queenshomes.csv	LOCATION: https://github.com/payolitec/Liveses
 2) Sales data:
 NAME:rollingsales_queenssale.csv	LOCATION: https://github.com/payolitec/Livesession3Assignment/blob/master/Analysis/rollingsales_queenssale.csv
 These files contain the exploratory data analysis performed over clean data to visualize and make comparisons (i) across neighborhoods, and (ii) across time.
-3) Rollingsales_data_analysis.md* LOCATION: https://github.com/payolitec/Livesession3Assignment/blob/master/Analysis/Rollingsales_data_analysis.md
-This file contains R markdown code responsible for loading the clean data and performing exploratory analysis on it, e.g. plots, histograms and summary statistics to determine any patterns and relationships among variables within the data set.
 ###4. A Paper directory:
 NAME: Paper				                LOCATION: 
 https://github.com/payolitec/Livesession3Assignment/tree/master/Paper
@@ -57,6 +53,10 @@ This file provides a summary of any patterns and/or relationships found within t
 2) A Microsoft Word file
 NAME: LiveSessionAssignment Units 3 and 4 - Instructions	LOCATION:  https://github.com/payolitec/Livesession3Assignment/blob/master/Paper/LiveSessionAssignment%20Units%203%20and%204%20-%20Instructions.docx
 This file contains the instructions for the Live Session Assignment Units 3 and 4
+3) Rollingsales_loadandclean.md LOCATION: https://github.com/payolitec/Livesession3Assignment/blob/master/Paper/Rollingsales_loadandclean.md
+This file contains R markdown code responsible for loading the raw data and cleaning it. For example, handling outliers, changing wrong data types, and normalized data into the proper R classes.
+4) Rollingsales_data_analysis.md LOCATION: https://github.com/payolitec/Livesession3Assignment/blob/master/Paper/Rollingsales_data_analysis.md
+This file contains R markdown code responsible for loading the clean data and performing exploratory analysis on it, e.g. plots, histograms and summary statistics to determine any patterns and relationships among variables within the data set.
 ##-----------------------------------------------------------------------------------------
 #***Implementation***
 ###The R code contained within the files will help analyze housing sales data and provide a path for discovering key patterns and trends capable of helping to provide insight into house sales in a particular locale.
