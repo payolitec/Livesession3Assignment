@@ -6,8 +6,8 @@
 ##Contributors: Paola Leon, Ken Avery, Andrew Abbott, Earl Shaw
 ##-----------------------------------------------------------------------------------------
 ### Sales data taken from the rollingsales_queens.csv was examined for relationship between sales price and gross square feet within family homes. 
-### A series of steps were need to clean the ìgross sqftî and ìsales price raw variables to make them suable for statistical analysis with R.  
-### Family homes were defined as homes where the Colum, ìbuilding class categoryî contained a character string of ìFAMILYí. There were exactly 9,711 rows 
+### A series of steps were need to clean the ‚Äúgross sqft‚Äù and ‚Äúsales price raw variables to make them suable for statistical analysis with R.  
+### Family homes were defined as homes where the Colum, ‚Äúbuilding class category‚Äù contained a character string of ‚ÄúFAMILY‚Äô. There were exactly 9,711 rows 
 ### which qualified after applying this definition.  Rows with sales price less than $25,000 where eliminated from further analysis because it 
 ### was guessed that it was like that no sale actually took place on these homes.  To better characterized the relationship of gross sqft to sales 
 ### price both variables were transformed by log functions.  A scatter plot revealed a moderate positive linearly correlation between the two variables.
